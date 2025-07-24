@@ -13,8 +13,8 @@ class HeaderComposer
     public function compose(View $view): void
     {
         $full_category = Category::all()->chunk(ceil(Category::all()->count() / 2));
-        $categories_start = $full_category[0];
-        $categories_end = $full_category[1];
+        $categories_start = $full_category[0] ?? [];
+        $categories_end = $full_category[1] ?? [];
 
         $mega_menus = Category::withCount('sub_categories')->with('sub_categories')->orderBy('sub_categories_count', 'desc')->limit(3)->get();
 

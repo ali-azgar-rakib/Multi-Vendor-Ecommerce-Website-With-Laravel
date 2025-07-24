@@ -330,7 +330,7 @@
                 <div class="banner-img style-2">
                     <div class="banner-text">
                         <h2 class="mb-100">Bring nature into your home</h2>
-                        <a href="{{ route('product_by_category',$category->id) }}" class="btn btn-xs">Shop Now <i
+                        <a href="{{ route('product_by_category',$category?->id ?? '') }}" class="btn btn-xs">Shop Now <i
                                 class="fi-rs-arrow-small-right"></i></a>
                     </div>
                 </div>
@@ -778,7 +778,7 @@
                     <div class="d-flex justify-content-between align-items-end mb-30">
                         <div>
                             <div class="product-category">
-                                <span class="text-muted">Since {{ $vendor->created_at->format('Y') }}</span>
+                                <span class="text-muted">Since {{ $vendor?->created_at?->format('Y') }}</span>
                             </div>
                             <h4 class="mb-5"><a href="vendor-details-1.html">{{ $vendor->name }}</a></h4>
                             <div class="product-rate-cover">

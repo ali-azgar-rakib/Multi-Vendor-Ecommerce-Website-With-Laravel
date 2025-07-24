@@ -26,7 +26,7 @@ class HomeController extends Controller
         $special_deals = Product::where('special_deal', 1)->inRandomOrder()->limit(3)->get();
         $recent_products = Product::latest()->limit(3)->get();
         $vendor_list = User::where('role', 'vendor')->withCount('products')->orderBy('products_count', 'desc')->limit(4)->get();
-
+        $categories = $categories ? $categories : [];
         return view('frontend.index', compact('sliders', 'categories', 'banners', 'products', 'feature_products', 'categories_with_products', 'hot_offers', 'special_offers', 'special_deals', 'recent_products', 'vendor_list'));
     }
 

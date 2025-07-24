@@ -44,7 +44,7 @@ class ProductFactory extends Factory
             'discount' => fake()->numberBetween(0, 50),
             'short_desc' => fake()->sentence(),
             'long_desc' => fake()->paragraph(5),
-            'thumbnail' => explode("/", fake()->image(public_path('uploaded/product'), 800, 800))[7]
+            'thumbnail' => fake()->image('public/uploaded/product', 800, 800, null, false)
 
         ];
     }

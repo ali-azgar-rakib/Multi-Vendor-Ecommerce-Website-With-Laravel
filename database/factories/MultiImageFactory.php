@@ -19,7 +19,7 @@ class MultiImageFactory extends Factory
     {
         return [
             'product_id' => fake()->randomElement(Product::pluck('id')->toArray()),
-            'image' => explode("/", fake()->image(public_path('uploaded/product'), 800, 800))[7]
+            'image' => fake()->image('public/uploaded/product', 800, 800, null, false)
         ];
     }
 }
